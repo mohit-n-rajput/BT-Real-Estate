@@ -1,2 +1,2 @@
 # BT-Real-Estate
-College Project with django and python.
+Real Estate explorer website built with: Django,Python and javascript,html,css and PostgreSQL database.
