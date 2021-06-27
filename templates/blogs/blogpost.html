@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+
+{% load humanize %}
+
+{% block title %} | Welcome {% endblock %}
+
+{% block content %}
+
+
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Add a gray background color with some padding */
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background: #f1f1f1;
+        }
+
+        /* Header/Blog Title */
+        .header {
+            padding: 30px;
+            font-size: 40px;
+            text-align: center;
+            background: white;
+        }
+
+        /* Create two unequal columns that floats next to each other */
+        /* Left column */
+        .leftcolumn {
+            float: left;
+            width: 75%;
+        }
+
+        /* Right column */
+        .rightcolumn {
+            float: left;
+            width: 25%;
+            padding-left: 20px;
+        }
+
+        /* Fake image */
+        .fakeimg {
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* Add a card effect for articles */
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: #ddd;
+            margin-top: 20px;
+        }
+
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 800px) {
+
+            .leftcolumn,
+            .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <br>
+    <div class="header">
+        <h2>{{post.title}}</h2>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <h2>{{ post.head0 }}</h2>
+                <h5>Date: Dec 7, 2017</h5>
+
+                <div class="fb-like" data-href="http://127.0.0.1:8000/blog/blogpost/{{post.post_id}}"
+                    data-layout="standard" data-action="like" data-size="large" data-show-faces="false"
+                    data-share="true"></div><br>
+
+                <br>
+                <div class="col-auto d-none d-lg-block">
+                    <img src="{{ post.thumbnail.url }}" class="bd-placeholder-img" height="500"
+                        aria-label="Placeholder: Thumbnail" />
+                </div>
+
+                <br>
+
+                <br>
+
+                <p>Some text..</p>
+                <p>{{post.chead0}}</p>
+
+                <h2>{{post.head1}}</h2>
+                <p>{{post.chead1}}</p>
+                <h2>{{post.head2}}</h2>
+                <p>{{post.chead2}}</p>
+
+
+
+
+
+            </div>
+
+            <div class="card">
+
+                <div class="fb-comments" data-href="http://127.0.0.1:8000/blog/blogpost/{{post.post_id}}"
+                    data-numposts="5">
+                </div>
+
+            </div>
+
+        </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">My Awesome Cart <em>started out as a small project and is now</em> the fastest growing
+                    e-commerce stores of all times in india and abroad.</p>
+
+                <div class="my-3 fb-share-button" data-href="http://127.0.0.1:8000/blog/blogpost/{{post.post_id}}"
+                    data-layout="button_count" data-size="large"><a target="_blank"
+                        href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2Fblog%2Fblogpost%2F4&src=sdkpreparse"
+                        class="fb-xfbml-parse-ignore">Share</a></div>
+
+            </div>
+
+            <div class="card">
+                <h4 class="font-italic">Elsewhere</h4>
+                <ol class="list-unstyled">
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ol>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+
+
+<!-- <div class="container">
+    <div class="row mt-4">
+        <div class="col-md-8 blog-main">
+            <h3 class="font-italic">
+                {{post.title}}
+            </h3>
+
+            <div class="blog-post">
+                <h2 class="blog-post-title">{{post.heading0}}</h2>
+                <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+
+                <p>{{post.chead0}}</p>
+
+
+                <h2>{{post.head1}}</h2>
+                <p>{{post.chead1}}</p>
+                <h2>{{post.head2}}</h2>
+                <p>{{post.chead2}}</p>
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+</div> -->
+
+<br>
+
+<div class="row">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-info">
+            <li class="breadcrumb-item">
+                <i class="fas fa-home"></i>
+                <a href="{% url 'blog-home' %}">Back to Blog Home</a>
+                <!-- <a href="index.html"> -->
+
+            </li>
+
+        </ol>
+    </nav>
+</div>
+
+
+
+{% endblock content %}

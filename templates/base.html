@@ -1,0 +1,54 @@
+<!-- include static file support -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/a.ico' %}"/>
+    
+    <!-- styling files -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- Custom -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Lightbox -->
+    <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
+
+    <title>BT Consultancy {% block title %}{% endblock %}</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+
+<body>
+    <!-- Top Bar -->
+    {% include "parts/_topbar.html" %}
+
+    <!-- Navbar -->
+    {% include "parts/_navbar.html" %}
+
+    <!-- % % , it is jinja engine code, like php when you want to write logic you write it -->
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- Footer,load from year which is get by js-->
+    {% include "parts/_footer.html" %}
+
+    <!-- javascript files -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %} "></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %} "></script>
+    <script src="{% static 'js/lightbox.min.js' %} "></script>
+    <script src="{% static 'js/main.js' %} "></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2"></script>
+
+</body>
+
+</html>

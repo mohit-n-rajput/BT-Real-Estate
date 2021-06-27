@@ -1,0 +1,18 @@
+{% autoescape off %}
+
+Hi {{ user.username }},
+Thanks for your registration in in the BT-REAL-ESTATE
+
+Please click on the link below to confirm your registration,
+http://{{ domain }}{% url 'activate' uid=uid token=token %}
+
+
+We look forward to your  in the BT-REAL-ESTATE, now and for years to come.
+
+If you have questions about this mailing, or need assistance, please direct your inquiries to the BT-REAL_ESTATE. 
+
+
+Email: mnr2019realestate@gmail.com
+        
+{% endautoescape %}
+
